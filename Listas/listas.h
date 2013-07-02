@@ -112,7 +112,6 @@ Nodo* insertar_cola(Nodo* lista, int n){
 
 void mostrar_lista(Nodo* lista){
 
-
     while( lista ){
         // Se imprime el elemento de la lista.
         printf("%d", lista->info);
@@ -124,6 +123,8 @@ void mostrar_lista(Nodo* lista){
         if (lista)
             printf(" -> ");
     }
+
+    printf("\n");
 }
 
 // Libera la memoria que ocupa cada uno de los elementos de una lista.
