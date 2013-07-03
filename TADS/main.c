@@ -55,12 +55,12 @@ main(){
     printf("Cola modificada \n");
     mostrar_cola(cola);
 
-    printf("\nSe procede a desempilarse un elemento..\n");
+    printf("\nSe procede a desencolarse un elemento..\n");
     i = desencolar( &cola );
 
     printf("Se recibió %d \n\n", i);
 
-    printf("Pila modificada \n");
+    printf("Cola modificada \n");
     mostrar_cola(cola);
 
     printf("\nSe procede a liberar toda la cola..");
