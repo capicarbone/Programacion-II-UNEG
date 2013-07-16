@@ -107,6 +107,41 @@ Nodo* insertar_cola(Nodo* lista, int n){
 
 }
 
+int longitud(Nodo* lista){
+
+    int i;
+
+    for( i= 0; lista; i++, lista = lista->sig);
+
+    return i;
+}
+
+void borrar_nodo(Nodo** lista, int pos ){
+
+    int i;
+    Nodo* actual = NULL;
+    Nodo* aux = NULL;
+
+    if (pos == 0){
+        aux = (*lista)->sig;
+        free(*lista);
+        (*lista) = aux;
+        return;
+    }
+
+    actual = *lista;
+
+    for (i = 0; i < pos && actual; i++, actual = actual->sig ){
+
+        if ( actual->sig && i == pos-1){
+            aux = actual->sig->sig;
+            free(actual->sig);
+            actual->sig = aux;
+        }
+    }
+
+}
+
 // Recorre una lista mostrando cada uno de sus elementos.
 // @param lista Apuntador al primer nodo de la lista
 

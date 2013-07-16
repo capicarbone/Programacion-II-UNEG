@@ -30,6 +30,15 @@ main(){
     // Se mustra la lista creada.
     mostrar_lista(lista);
 
+    printf("La longitud de la lista es: %d\n\n" , longitud(lista));
+
+    borrar_nodo(&lista, 2);
+    borrar_nodo(&lista, 0);
+
+    mostrar_lista(lista);
+
+    printf("La longitud de la lista es: %d\n\n" , longitud(lista));
+
     // Liberación de la lista.
     liberar_lista(&lista);
 
