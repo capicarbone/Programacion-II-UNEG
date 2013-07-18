@@ -100,63 +100,17 @@ void mostrar_preorden(NodoArbol* raiz){
     }
 }
 
-/*
-void mostrar_arbol(NodoArbol* raiz, int prd,  Nodo* l ){
+// Libera toda la memoria usada por el árbol.
+// @param raiz Referencia al apuntador del nodo raiz.
 
-    int i = 0;
-    Nodo *aux = NULL;
+void liberar_arbol(NodoArbol** raiz){
 
-    if (raiz){
-
-        l = insertar_cola(l, 0);
-
-        //mostrar_lista(l);
-
-        printf("|- ");
-        printf("%d\n", raiz->info);
-
-        prd++;
-
-        if (raiz->izq){
-
-            aux = l;
-
-            while(aux){
-
-
-                if (aux->info == 0)
-                    printf("|   ");
-                else
-                    printf("   ");
-
-                aux = aux->sig;
-            }
-            mostrar_arbol(raiz->izq, prd, l);
-        }
-
-        borrar_nodo(&l, longitud(l)-1);
-        l = insertar_cola(l, 1);
-
-        if (raiz->der){
-
-            while(aux){
-                if (aux->info == 0)
-                    printf("|  ");
-                else
-                    printf("   ");
-
-                aux = aux->sig;
-            }
-
-            mostrar_arbol(raiz->der, prd, l);
-        }
-
-
-        borrar_nodo(&l, longitud(l)-1);
-        l = insertar_cola(l, 1);
-
+    if (*raiz){
+        liberar_arbol(&((*raiz)->izq));
+        liberar_arbol(&((*raiz)->der));
+        free(*raiz);
+        *raiz = NULL;
     }
-
-} */
+}
 
 #endif // ARBOLES_H_INCLUDED

@@ -1,7 +1,7 @@
 #include "arboles.h"
 
 main(){
-    NodoArbol* raiz;
+    NodoArbol* raiz = NULL;
 
     raiz = insertar_ordenado(104, raiz);
     raiz = insertar_ordenado(5, raiz);
@@ -19,5 +19,9 @@ main(){
 
     printf("\npostorden: ");
     mostrar_postorden(raiz);
+
+    liberar_arbol(&raiz);
+
+    mostrar_inorden(raiz);
 
 }
