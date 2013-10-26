@@ -76,7 +76,7 @@ void insertar_tope_m(Nodo** lista, int n){
 }
 
 // Inserción de un elemento en una lista al final de esta, es decir, en su cola.
-// @param lista Apuntado al primer elemento de la lista
+// @param lista Apuntador al primer elemento de la lista
 // @param n Información a insertarse
 // Retorna la nueva cabezera de la lista.
 
@@ -107,6 +107,10 @@ Nodo* insertar_cola(Nodo* lista, int n){
 
 }
 
+// Número de nodos de la lista recibida
+// @param lista Apuntador al primer elemento de la lista
+// Retorna número de nodos.
+
 int longitud(Nodo* lista){
 
     int i;
@@ -115,6 +119,10 @@ int longitud(Nodo* lista){
 
     return i;
 }
+
+// Elimina un nodo de la lista dada una posición. Si no existe, no borra nodo alguno.
+// @param lista Apuntador al primer elemento de la lista
+// @param pos Posición del nodo a eliminar
 
 void borrar_nodo(Nodo** lista, int pos ){
 
